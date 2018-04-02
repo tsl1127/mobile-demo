@@ -52,6 +52,39 @@
             right: 20px;
         }
 
+        .nav2{
+            display: none;
+        }
+
+        @media (min-width:451px){    /*PC上*/
+            header > button{
+                display: none;
+            }
+            /* .nav{
+                display: none !important;  /*加优先级，一般最好不要使用*/
+            /* } */ 
+            .nav,.nav.active{
+                display: none;
+            }
+
+            .nav2{
+                display: block;
+            }
+            header{
+                display: flex;
+                align-items: center;
+            }
+            header .nav2{
+                display: flex;
+                margin-left: 20px;
+            }
+            header .nav2>li{
+                margin: 0 10px;
+            }
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -65,6 +98,13 @@
             <li><a href="#">导航4</a></li>
             <li><a href="#">导航5</a></li>
         </ul>
+        <ul  class="nav2"> 
+                <li><a href="#">导航1</a></li>
+                <li><a href="#">导航2</a></li>
+                <li><a href="#">导航3</a></li>
+                <li><a href="#">导航4</a></li>
+                <li><a href="#">导航5</a></li>
+            </ul>
     </header>
     <script>
         xx.onclick=function(){
