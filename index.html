@@ -13,6 +13,10 @@
             color: inherit;
             text-decoration: none;  /*不要下划线*/
         }
+        header{
+            padding: 10px;
+            position: relative;
+        }
         ul{
             list-style: none;
         }
@@ -28,19 +32,33 @@
             clear: both;
         }
         .nav>li{
-            float: left;
+            /* float: left; */
         }
 
         .nav{
             display: none;
+            background: grey;
+            margin-top: 10px;
+
         }
+        .nav.active{
+            display: flex;   /*用了flex就不用float了*/
+            justify-content: space-between;
+        }
+
+        header > button{
+            position: absolute;
+            top:26px;
+            right: 20px;
+        }
+
     </style>
 </head>
 <body>
     <header>
         <div class="log"></div>
         <button id="xx">菜单</button>
-        <ul id="yy" class="nav clearfix"> 
+        <ul id="yy" class="nav"> 
             <li><a href="#">导航1</a></li>
             <li><a href="#">导航2</a></li>
             <li><a href="#">导航3</a></li>
@@ -50,14 +68,8 @@
     </header>
     <script>
         xx.onclick=function(){
-            if(yy.style.display==='block'){
-            yy.style.display='none'                
+                yy.classList.toggle('active')                             
             }
-            else{
-            yy.style.display='block'                
-                
-            }
-        }
     </script>
 </body>
 </html>
